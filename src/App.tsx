@@ -40,23 +40,23 @@ export default function App() {
         <Hero />
 
         {/* Featured Work Section */}
-        <section id="work" className="py-32 px-6">
+        <section id="work" className="py-24 lg:py-32 px-6">
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 lg:mb-24 gap-8">
               <div className="max-w-xl">
                 <Reveal>
-                  <span className="text-sm uppercase tracking-[0.3em] font-sans opacity-60 mb-4 block">Selected Projects</span>
+                  <span className="text-[10px] lg:text-sm uppercase tracking-[0.3em] font-sans opacity-60 mb-4 block">Selected Projects</span>
                 </Reveal>
                 <Reveal delay={0.3}>
-                  <h2 className="text-4xl md:text-6xl font-serif italic">A collection of visual stories and brand evolutions.</h2>
+                  <h2 className="text-3xl lg:text-6xl font-serif italic leading-tight">A collection of visual stories and brand evolutions.</h2>
                 </Reveal>
               </div>
               <div className="hidden md:block text-right">
-                <p className="text-sm opacity-50 uppercase tracking-widest">Scroll to explore</p>
+                <p className="text-xs opacity-50 uppercase tracking-widest">Scroll to explore</p>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-32">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 lg:gap-y-32">
               {projects.map((project, index) => (
                 <ProjectCard 
                   key={project.id} 
@@ -73,14 +73,14 @@ export default function App() {
         <Process />
 
         {/* About Section */}
-        <section id="about" className="py-32 px-6">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
+        <section id="about" className="py-24 lg:py-32 px-6">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
             <div className="lg:col-span-5">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="relative aspect-[3/4] overflow-hidden"
+                className="relative aspect-[3/4] overflow-hidden shadow-2xl"
               >
                 <img 
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1600&auto=format&fit=crop" 
@@ -88,19 +88,19 @@ export default function App() {
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 border-[20px] border-bg-light dark:border-bg-dark pointer-events-none" />
+                <div className="absolute inset-0 border-[10px] lg:border-[20px] border-bg-light dark:border-bg-dark pointer-events-none" />
               </motion.div>
             </div>
             <div className="lg:col-span-7">
               <Reveal>
-                <span className="text-sm uppercase tracking-[0.3em] font-sans opacity-60 mb-6 block">The Visionary</span>
+                <span className="text-[10px] lg:text-sm uppercase tracking-[0.3em] font-sans opacity-60 mb-6 block">The Visionary</span>
               </Reveal>
               <Reveal delay={0.3}>
-                <h2 className="text-5xl md:text-7xl font-serif italic mb-8 leading-tight">
+                <h2 className="text-4xl lg:text-7xl font-serif italic mb-8 leading-tight">
                   I believe design is the <span className="font-sans not-italic font-bold tracking-tighter">silent ambassador</span> of your brand.
                 </h2>
               </Reveal>
-              <div className="space-y-6 text-lg opacity-70 leading-relaxed max-w-2xl">
+              <div className="space-y-6 text-base lg:text-lg opacity-70 leading-relaxed max-w-2xl">
                 <Reveal delay={0.4}>
                   <p>
                     With over a decade of experience in the creative industry, I've helped brands from startups to Fortune 500s find their unique voice in a crowded digital landscape.
@@ -115,20 +115,20 @@ export default function App() {
               <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-8 border-t border-neutral-500/10 pt-12">
                 <Reveal delay={0.6}>
                   <div>
-                    <h4 className="text-2xl font-serif italic">120+</h4>
-                    <p className="text-xs uppercase tracking-widest opacity-50">Projects Delivered</p>
+                    <h4 className="text-xl lg:text-2xl font-serif italic">120+</h4>
+                    <p className="text-[10px] uppercase tracking-widest opacity-50">Projects Delivered</p>
                   </div>
                 </Reveal>
                 <Reveal delay={0.7}>
                   <div>
-                    <h4 className="text-2xl font-serif italic">15+</h4>
-                    <p className="text-xs uppercase tracking-widest opacity-50">Design Awards</p>
+                    <h4 className="text-xl lg:text-2xl font-serif italic">15+</h4>
+                    <p className="text-[10px] uppercase tracking-widest opacity-50">Design Awards</p>
                   </div>
                 </Reveal>
                 <Reveal delay={0.8}>
                   <div>
-                    <h4 className="text-2xl font-serif italic">10</h4>
-                    <p className="text-xs uppercase tracking-widest opacity-50">Years Experience</p>
+                    <h4 className="text-xl lg:text-2xl font-serif italic">10</h4>
+                    <p className="text-[10px] uppercase tracking-widest opacity-50">Years Experience</p>
                   </div>
                 </Reveal>
               </div>

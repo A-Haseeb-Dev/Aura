@@ -84,22 +84,42 @@ export default function Navbar() {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-bg-light dark:bg-bg-dark border-b border-border-subtle overflow-hidden"
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className="md:hidden fixed inset-0 z-[60] bg-bg-light dark:bg-bg-dark flex flex-col"
           >
-            <div className="px-6 py-8 flex flex-col space-y-6">
-              {['Work', 'Services', 'About', 'Contact'].map((item) => (
-                <a
+            <div className="flex justify-between items-center px-6 py-8 border-b border-border-subtle">
+              <div className="text-2xl font-display font-bold tracking-tighter text-ink-light dark:text-ink-dark">
+                AURA<span className="text-accent-light dark:text-accent-dark">.</span>
+              </div>
+              <button onClick={() => setIsMenuOpen(false)} className="p-2 text-ink-light dark:text-ink-dark">
+                <X size={24} />
+              </button>
+            </div>
+            <div className="px-6 py-12 flex flex-col space-y-8 flex-grow">
+              {['Work', 'Services', 'About', 'Contact'].map((item, i) => (
+                <motion.a
                   key={item}
                   href={`#${item.toLowerCase()}`}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.1 + 0.2 }}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-2xl font-serif italic text-ink-light dark:text-ink-dark"
+                  className="text-5xl font-serif italic text-ink-light dark:text-ink-dark hover:text-accent-light dark:hover:text-accent-dark transition-colors"
                 >
                   {item}
-                </a>
+                </motion.a>
               ))}
+            </div>
+            <div className="p-6 border-t border-border-subtle flex justify-between items-center">
+              <span className="text-[10px] uppercase tracking-widest opacity-40">© 2026 Aura Studio</span>
+              <div className="flex gap-4">
+                <button onClick={toggleTheme} className="p-2 text-ink-light dark:text-ink-dark">
+                  {isDark ? <Sun size={18} /> : <Moon size={18} />}
+                </button>
+              </div>
             </div>
           </motion.div>
         )}

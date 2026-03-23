@@ -81,12 +81,28 @@
   }
 
   @keyframes slamIn {
-    0% { transform: scale(2) translateY(-100px) skewX(-10deg); opacity: 0; }
-    100% { transform: scale(1) translateY(0) skewX(-10deg); opacity: 1; }
+    0% { transform: scale(1.2) translateY(40px) skewY(5deg); opacity: 0; filter: blur(10px); }
+    100% { transform: scale(1) translateY(0) skewY(0deg); opacity: 1; filter: blur(0px); }
+  }
+
+  @keyframes revealUp {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(0); }
   }
 
   .animate-slam {
-    animation: slamIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: slamIn 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .reveal-text {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+  }
+
+  .reveal-text > span {
+    display: inline-block;
+    animation: revealUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   .ease-expo {

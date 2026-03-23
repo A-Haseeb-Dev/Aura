@@ -9,7 +9,10 @@ interface RevealProps {
 
 export default function Reveal({ children, width = "fit-content", delay = 0.2 }: RevealProps) {
   return (
-    <div style={{ position: "relative", width, overflow: "hidden" }}>
+    <div 
+      className="relative overflow-hidden" 
+      style={{ width: width === "100%" ? "100%" : "fit-content", maxWidth: "100%" }}
+    >
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 75 },
