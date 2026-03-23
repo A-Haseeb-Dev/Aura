@@ -43,7 +43,7 @@ export default function Hero() {
   return (
     <section 
       ref={containerRef}
-      className="min-h-screen lg:min-h-[150vh] flex flex-col justify-center px-6 relative overflow-hidden bg-bg-light dark:bg-bg-dark"
+      className="min-h-screen lg:min-h-[120vh] flex flex-col justify-center px-6 relative overflow-hidden bg-bg-light dark:bg-bg-dark"
     >
       {/* Background Grid Lines */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.02] dark:opacity-[0.04]">
